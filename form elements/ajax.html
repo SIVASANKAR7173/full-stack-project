@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <h2>The XMLHttpRequest object</h2>
+        <input type="text" name="texthere" id="texthere">
+        <button type="button" onclick="loadDoc()">Check</button>
+    </div>
+
+    <script>
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            const textHereInput = document.getElementById("texthere").value;
+            xhttp.onload = function () {
+                if (this.responseText === textHereInput) {
+                    document.getElementById("demo").innerHTML = "It is there!";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = "It is not there!";
+                }
+
+            }
+            xhttp.open("GET", "ajax1.txt");
+            xhttp.send();
+        }
+
+    </script>
+
+</body>
+
+</html>
