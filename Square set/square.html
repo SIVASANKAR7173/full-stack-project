@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Square set in JS</title>
+</head>
+
+<body>
+    <script>
+        // Container Creation and its style
+        let container = document.createElement("div");
+        container.id = "container";
+        container.style.display = "flex";
+        container.style.height = "100%";
+        container.style.width = "100%";
+        document.querySelector("body").appendChild(container);
+        let color = ["red", "green", "gray", "blue", "gray"];
+
+        for (i = 0; i < color.length; i++) {
+            // Column Creation
+            let column = document.createElement("div");
+            column.className = "column";
+            container.appendChild(column);
+            column.style.height = "300px";
+            column.style.width = "33.33%";
+            column.style.border = "1px solid black";
+            column.style.margin = "20px 20px";
+            column.style.padding = "30px";
+    
+            // Background color Creation
+            let content = document.createElement("div");
+            content.className = "content";
+            column.appendChild(content);
+            // Heading Creation
+            let para = document.createElement("p");
+            content.appendChild(para);
+            para.innerHTML = "Heading" + (i + 1);
+            // Heading Style
+            para.style.height = "40px";
+            para.style.width = "120px";
+            para.style.fontSize = "30px";
+            para.style.backgroundColor ="white"
+            para.style.margin = "70px";
+            para.style.padding = "15px";
+            para.style.borderRadius = "20px";
+            para.style.border = "5px solid black"
+            // Background Color style
+            content.style.height = "100%";
+            content.style.width = "100%";
+            content.style.borderRadius = "20px";
+            content.style.alignContent = "center";
+            content.style.backgroundColor = color[i];
+        }
+    </script>
+    
+</body>
+
+</html>
